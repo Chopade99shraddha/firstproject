@@ -1,0 +1,24 @@
+<div class="p-5">
+<h3>Templata Form</h3>
+<form (ngSubmit)="templateForm.valid && submitData()" #templateForm="ngForm" >
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="email" class="form-control" id="name" name="name"[(ngModel)]="tc.name" required #name="ngModel">
+     <div *ngIf="name.invalid && name.dirty">
+      <div id="emailHelp" class="form-text">Please enter valid name</div>
+     </div>
+     {{name.valid}}
+     <br>
+     {{tc.name}}
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" [(ngModel)]="tc.email" required>
+           </div>
+    <div class="mb-3 form-check">
+        <label for="Age" class="form-label">Age</label>
+        <input type="email" class="form-control" id="Age"[(ngModel)]="tc.age" required>
+        </div>
+    <button type="submit" class="btn btn-primary" [disabled]="templateForm.invalid">Submit</button>
+  </form>
+  </div>
